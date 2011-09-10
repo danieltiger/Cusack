@@ -104,7 +104,6 @@
 		HTTPConnection *connection = [[HTTPConnection alloc] initWithFileHandle:remoteFileHandle delegate:self];
 		
 		if (connection) {
-			NSIndexSet *insertedIndexes = [NSIndexSet indexSetWithIndex:[connections count]];
 			[connections addObject:connection];
 			[connection release];
 		}
@@ -112,7 +111,7 @@
 }
 
 - (void)closeConnection:(HTTPConnection *)connection {
-	unsigned connectionIndex = [connections indexOfObjectIdenticalTo:connection];
+	NSUInteger connectionIndex = [connections indexOfObjectIdenticalTo:connection];
 	if (connectionIndex == NSNotFound) {
 		return;
 	}
@@ -120,15 +119,17 @@
 	NSMutableIndexSet *obsoleteRequests = [NSMutableIndexSet indexSet];
 	BOOL stopProcessing = NO;
 
-	for (NSDictionary *request in requests) {
-		if ([request objectForKey:@"connection"] == connection) {
-			if (request == self.currentRequest) {
+	for (int i = 0; i < [requests count]; i++) {
+        NSDictionary *request = [requests objectAtIndex:i];
+		
+        if ([request objectForKey:@"connection"] == connection) {
+            if (request == self.currentRequest) {
 				stopProcessing = YES;
 			}
 			
-			[obsoleteRequests addIndex:i];
-		}
-	}
+            [obsoleteRequests addIndex:i];
+        }
+    }	
 	
 	NSIndexSet *connectionIndexSet = [NSIndexSet indexSetWithIndex:connectionIndex];
 	[requests removeObjectsAtIndexes:obsoleteRequests];
@@ -141,5 +142,86 @@
 	
 	[self processNextRequestIfNecessary];
 }
+
+- (void)newRequestWithURL:(NSURL *)url connection:(HTTPConnection *)connection {
+	if (!url) {
+		return;
+	}
+	
+	NSDictionary *request = [NSDictionary dictionaryWithObjectsAndKeys:
+							 url, @"url", 
+							 connection, @"connection", 
+							 [NSCalendarDate date], @"date", nil];
+	
+	[requests addObject:request];
+	
+	[self processNextRequestIfNecessary];
+}
+
+- (void)processNextRequestIfNecessary {
+	if (self.currentRequest == nil && [requests count] > 0) {
+		self.currentRequest = [requests objectAtIndex:0];
+		
+		[delegate processURL:[currentRequest objectForKey:@"url"] connection:[currentRequest objectForKey:@"connection"]];
+	}
+}
+
+- (void)replyWithStatusCode:(int)code headers:(NSDictionary *)headers body:(NSData *)body {
+	CFHTTPMessageRef message = CFHTTPMessageCreateResponse(kCFAllocatorDefault, code, NULL, kCFHTTPVersion1_1);
+	
+	for (NSString *key in headers) {
+		id value = [headers objectForKey:key];
+		
+		if (![value isKindOfClass:[NSString class]]) {
+			value = [value description];
+		}
+		
+		if (![key isKindOfClass:[NSString class]]) {
+			key = [key description];
+		}
+		
+		CFHTTPMessageSetHeaderFieldValue(message, (CFStringRef)key, (CFStringRef)value);
+	}
+	
+	if (body) {
+		NSString *length = [NSString stringWithFormat:@"%d", [body length]];
+		CFHTTPMessageSetHeaderFieldValue(message, (CFStringRef)@"Content-Length", (CFStringRef)length);
+		CFHTTPMessageSetBody(message, (CFDataRef)body);
+	}
+	
+	CFDataRef messageData = CFHTTPMessageCopySerializedMessage(message);
+	
+	@try {
+		NSFileHandle *remoteFileHandle = [[self.currentRequest objectForKey:@"connection"] fileHandle];
+		[remoteFileHandle writeData:(NSData *)messageData];
+	}
+	@catch (NSException *exception) {
+		NSLog(@"Error while sending response (%@): %@", [self.currentRequest objectForKey:@"url"], [exception reason]);
+	}
+	
+	CFRelease(messageData);
+	CFRelease(message);
+	
+	NSUInteger index = [requests indexOfObjectIdenticalTo:self.currentRequest];
+	if (index != NSNotFound) {
+		NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:index];
+		[requests removeObjectsAtIndexes:indexSet];
+	}
+	
+	self.currentRequest = nil;
+	[self processNextRequestIfNecessary];
+}
+
+- (void)replyWithData:(NSData *)data MIMEType:(NSString *)type {
+	NSDictionary *headers = [NSDictionary dictionaryWithObject:type forKey:@"Content-Type"];
+	[self replyWithStatusCode:200 headers:headers body:data];
+}
+
+- (void)replyWithStatusCode:(int)code message:(NSString *)message {
+	NSData *body = [message dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+	
+	[self replyWithStatusCode:code headers:nil body:body];
+}
+
 
 @end

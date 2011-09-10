@@ -6,6 +6,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreFoundation/CoreFoundation.h>
+
 
 @class HTTPConnection;
 
