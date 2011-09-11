@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07153172141CA4E600B0EB60 /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = 07153171141CA4E600B0EB60 /* App.m */; };
 		073554F4141C0B2700649E7B /* HTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 073554F3141C0B2700649E7B /* HTTPServer.m */; };
 		07B7C25C141C13D700C09D64 /* HTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B7C25B141C13D700C09D64 /* HTTPConnection.m */; };
 		07B7C272141C1CE200C09D64 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B7C271141C1CE200C09D64 /* CoreFoundation.framework */; };
@@ -31,6 +32,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		07153170141CA4E600B0EB60 /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
+		07153171141CA4E600B0EB60 /* App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = App.m; sourceTree = "<group>"; };
 		073554F2141C0B2700649E7B /* HTTPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPServer.h; sourceTree = "<group>"; };
 		073554F3141C0B2700649E7B /* HTTPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPServer.m; sourceTree = "<group>"; };
 		07B7C25A141C13D700C09D64 /* HTTPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPConnection.h; sourceTree = "<group>"; };
@@ -78,6 +81,8 @@
 				073554F3141C0B2700649E7B /* HTTPServer.m */,
 				07B7C25A141C13D700C09D64 /* HTTPConnection.h */,
 				07B7C25B141C13D700C09D64 /* HTTPConnection.m */,
+				07153170141CA4E600B0EB60 /* App.h */,
+				07153171141CA4E600B0EB60 /* App.m */,
 				32A70AAB03705E1F00C91783 /* Cusack_Prefix.pch */,
 				08FB7796FE84155DC02AAC07 /* Cusack.m */,
 			);
@@ -164,6 +169,7 @@
 				8DD76F9A0486AA7600D96B5E /* Cusack.m in Sources */,
 				073554F4141C0B2700649E7B /* HTTPServer.m in Sources */,
 				07B7C25C141C13D700C09D64 /* HTTPConnection.m in Sources */,
+				07153172141CA4E600B0EB60 /* App.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,11 +1,13 @@
 #import <Foundation/Foundation.h>
-#import "HTTPServer.h"
+#import "App.h"
 
 int main (int argc, const char * argv[]) {
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
 
-    // insert code here...
-    NSLog(@"Hello, World!");
+	App *app = [[App alloc] init];
+	
+    [[NSRunLoop currentRunLoop] run];
+	
     [pool drain];
     return 0;
 }
