@@ -6,7 +6,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreFoundation/CoreFoundation.h>
 #import "HTTPConnection.h"
 
 
