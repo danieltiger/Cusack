@@ -7,12 +7,13 @@
 
 #import "HTTPConnection.h"
 #import "HTTPServer.h"
-#import <netinet/in.h>      // for sockaddr_in
-#import <arpa/inet.h>       // for inet_ntoa
+#import <netinet/in.h>
+#import <arpa/inet.h>
 
 
 @implementation HTTPConnection
 
+@synthesize delegate;
 @synthesize fileHandle, address;
 
 - (void)dealloc {
@@ -22,16 +23,14 @@
 		CFRelease(message);
 	}
 	
-	[delegate release];
 	[fileHandle release];
 	
 	[super dealloc];
 }
 
-- (id)initWithFileHandle:(NSFileHandle *)fh delegate:(id)dl {
+- (id)initWithFileHandle:(NSFileHandle *)fh {
 	if (self = [super init]) {
 		fileHandle = [fh retain];
-		delegate = [dl retain];
 		message = NULL;
 		isMessageComplete = YES;
 		
@@ -63,7 +62,7 @@
 	NSData *data = [[notification userInfo] objectForKey:NSFileHandleNotificationDataItem];
 	
 	if ([data length] == 0) {
-		[delegate closeConnection:self];
+		[self.delegate closeConnection:self];
 		
 		return;
 	}
@@ -81,7 +80,7 @@
 			isMessageComplete = YES;
 			
 			CFURLRef url = CFHTTPMessageCopyRequestURL(message);
-			[delegate newRequestWithURL:(NSURL *)url connection:self];
+			[self.delegate newRequestWithURL:(NSURL *)url connection:self];
 			CFRelease(url);
 			CFRelease(message);
 			message = NULL;
@@ -91,7 +90,7 @@
 	} else {
 		NSLog(@"Incomming message not an HTTP header, ignoring.");
 		
-		[delegate closeConnection:self];
+		[self.delegate closeConnection:self];
 	}
 }
 

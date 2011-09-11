@@ -10,18 +10,26 @@
 #import <CoreFoundation/CoreFoundation.h>
 
 
+@protocol HTTPConnectionDelegate <NSObject>
+@required
+- (void)closeConnection:(id)connection;
+- (void)newRequestWithURL:(NSURL *)url connection:(id)connection;
+@end
+
 @interface HTTPConnection : NSObject {
 	NSFileHandle *fileHandle;
-	id delegate;
+	id<HTTPConnectionDelegate> delegate;
 	NSString *address;
 	
 	CFHTTPMessageRef message;
 	BOOL isMessageComplete;
 }
 
+@property (assign) id<HTTPConnectionDelegate> delegate;
+
 @property (nonatomic, retain) NSFileHandle *fileHandle;
 @property (nonatomic, retain) NSString *address;
 
-- (id)initWithFileHandle:(NSFileHandle *)fh delegate:(id)dl;
+- (id)initWithFileHandle:(NSFileHandle *)fh;
 
 @end

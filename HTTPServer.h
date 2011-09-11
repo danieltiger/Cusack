@@ -7,13 +7,18 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreFoundation/CoreFoundation.h>
+#import "HTTPConnection.h"
 
 
-@class HTTPConnection;
+@protocol HTTPServerDelegate <NSObject>
+@required
+- (void)processURL:(NSURL *)path connection:(HTTPConnection *)connection;
+- (void)stopProcessing;
+@end
 
-@interface HTTPServer : NSObject {
+@interface HTTPServer : NSObject <HTTPConnectionDelegate> {
 	int portNumber;
-	id delegate;
+	id<HTTPServerDelegate> delegate;
 	
 	NSSocketPort *socketPort;
 	NSFileHandle *fileHandle;
@@ -24,11 +29,13 @@
 	NSDictionary *currentRequest;
 }
 
+@property (assign) id<HTTPServerDelegate> delegate;
+
 @property (nonatomic, retain) NSMutableArray *connections;
 @property (nonatomic, retain) NSMutableArray *requests;
 @property (nonatomic, retain) NSDictionary *currentRequest;
 
-- (id)initWithPortNumber:(int)pn delegate:(id)dl;
+- (id)initWithPortNumber:(int)pn;
 
 - (void)closeConnection:(HTTPConnection *)connection;
 - (void)newRequestWithURL:(NSURL *)url connection:(HTTPConnection *)connection;

@@ -14,9 +14,17 @@
 
 @synthesize server;
 
+- (void)dealloc {
+	server.delegate = nil;
+	[server release];
+	
+	[super dealloc];
+}
+
 - (id)init {
 	if (self = [super init]) {
-		self.server = [[[HTTPServer alloc] initWithPortNumber:1723 delegate:self] autorelease];
+		self.server = [[[HTTPServer alloc] initWithPortNumber:1723] autorelease];
+		self.server.delegate = self;
 	}
 	
 	return self;

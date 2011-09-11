@@ -7,13 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HTTPServer.h"
 
-@class HTTPServer;
 
-@interface App : NSObject {
+@class HTTPConnection;
+
+@interface App : NSObject <HTTPServerDelegate> {
 	HTTPServer *server;
 }
 
 @property (nonatomic, retain) HTTPServer *server;
+
+- (void)processURL:(NSURL *)path connection:(HTTPConnection *)connection;
+- (void)stopProcessing;
 
 @end

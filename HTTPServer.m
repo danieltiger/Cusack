@@ -17,6 +17,7 @@
 
 @implementation HTTPServer
 
+@synthesize delegate;
 @synthesize connections, requests, currentRequest;
 
 - (void)dealloc {
@@ -24,7 +25,6 @@
 
 	[fileHandle release];
 	[socketPort release];
-	[delegate release];	
 	
 	[requests release];
 	[connections release];
@@ -33,21 +33,14 @@
 	[super dealloc];
 }
 
-- (id)initWithPortNumber:(int)pn delegate:(id)dl {
+- (id)initWithPortNumber:(int)pn {
 	if (self == [super init]) {
 		portNumber = pn;
-		delegate = [dl retain];
 		
 		connections = [[NSMutableArray alloc] init];
 		requests = [[NSMutableArray alloc] init];
 		
 		self.currentRequest = nil;
-		
-		NSAssert(delegate != nil, @"Please specify a delegate");
-		NSAssert([delegate respondsToSelector:@selector(processURL:connection:)],
-				 @"Delegate needs to implement 'processURL:connection:'");
-		NSAssert([delegate respondsToSelector:@selector(stopProcessing)],
-				 @"Delegate needs to implement 'stopProcessing'");
 		
 //		socketPort = [[NSSocketPort alloc] initWithTCPPort:portNumber];
 //		int fd = [socketPort socket];
@@ -101,7 +94,8 @@
 	[fileHandle acceptConnectionInBackgroundAndNotify];
 	
 	if (remoteFileHandle) {
-		HTTPConnection *connection = [[HTTPConnection alloc] initWithFileHandle:remoteFileHandle delegate:self];
+		HTTPConnection *connection = [[HTTPConnection alloc] initWithFileHandle:remoteFileHandle];
+		connection.delegate = self;
 		
 		if (connection) {
 			[connections addObject:connection];
@@ -115,6 +109,8 @@
 	if (connectionIndex == NSNotFound) {
 		return;
 	}
+	
+	connection.delegate = nil;
 	
 	NSMutableIndexSet *obsoleteRequests = [NSMutableIndexSet indexSet];
 	BOOL stopProcessing = NO;
@@ -136,7 +132,7 @@
 	[connections removeObjectsAtIndexes:connectionIndexSet];
 	
 	if (stopProcessing) {
-		[delegate stopProcessing];
+		[self.delegate stopProcessing];
 		self.currentRequest = nil;
 	}
 	
@@ -162,7 +158,7 @@
 	if (self.currentRequest == nil && [requests count] > 0) {
 		self.currentRequest = [requests objectAtIndex:0];
 		
-		[delegate processURL:[currentRequest objectForKey:@"url"] connection:[currentRequest objectForKey:@"connection"]];
+		[self.delegate processURL:[currentRequest objectForKey:@"url"] connection:[currentRequest objectForKey:@"connection"]];
 	}
 }
 
