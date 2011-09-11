@@ -3,7 +3,6 @@
 //  Cusack
 //
 //  Created by Arik Devens on 9/11/11.
-//  Copyright 2011 Posterous, Inc. All rights reserved.
 //
 
 #import "App.h"

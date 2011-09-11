@@ -3,7 +3,6 @@
 //  Cusack
 //
 //  Created by Arik Devens on 9/10/11.
-//  Copyright 2011 Posterous, Inc. All rights reserved.
 //
 
 #import "HTTPConnection.h"
@@ -43,7 +42,7 @@
 		if (addrData) {
 			struct sockaddr_in *sock = (struct sockaddr_in *)CFDataGetBytePtr(addrData);
 			char *naddr = inet_ntoa(sock->sin_addr);
-			self.address = [NSString stringWithCString:naddr];
+			self.address = [NSString stringWithCString:naddr encoding:NSASCIIStringEncoding];
 			CFRelease(addrData);
 		} else {
 			self.address = @"NULL";
