@@ -3,7 +3,6 @@
 //  Cusack
 //
 //  Created by Arik Devens on 9/13/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>

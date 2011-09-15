@@ -19,6 +19,8 @@
 		0750092514217F5A00F89F50 /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 0750091F14217F5A00F89F50 /* Request.m */; };
 		0750092614217F5A00F89F50 /* ResponseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0750092114217F5A00F89F50 /* ResponseManager.m */; };
 		075009291421804900F89F50 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075009271421804400F89F50 /* CoreServices.framework */; };
+		0750092F14219A3900F89F50 /* Ruby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0750092D14219A3200F89F50 /* Ruby.framework */; };
+		0750093514219D8800F89F50 /* Rack.m in Sources */ = {isa = PBXBuildFile; fileRef = 0750093414219D8800F89F50 /* Rack.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -56,6 +58,9 @@
 		0750092014217F5A00F89F50 /* ResponseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseManager.h; sourceTree = "<group>"; };
 		0750092114217F5A00F89F50 /* ResponseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseManager.m; sourceTree = "<group>"; };
 		075009271421804400F89F50 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		0750092D14219A3200F89F50 /* Ruby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Ruby.framework; path = System/Library/Frameworks/Ruby.framework; sourceTree = SDKROOT; };
+		0750093314219D8800F89F50 /* Rack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rack.h; sourceTree = "<group>"; };
+		0750093414219D8800F89F50 /* Rack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rack.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0750092F14219A3900F89F50 /* Ruby.framework in Frameworks */,
 				0750091114217F3500F89F50 /* CoreData.framework in Frameworks */,
 				0750090214217E9A00F89F50 /* Foundation.framework in Frameworks */,
 				075009291421804900F89F50 /* CoreServices.framework in Frameworks */,
@@ -92,6 +98,7 @@
 		0750090014217E9A00F89F50 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0750092D14219A3200F89F50 /* Ruby.framework */,
 				075009271421804400F89F50 /* CoreServices.framework */,
 				0750090F14217F2200F89F50 /* CoreData.framework */,
 				0750090114217E9A00F89F50 /* Foundation.framework */,
@@ -106,6 +113,8 @@
 				0750091314217F4800F89F50 /* HTTPServer.m */,
 				0750091514217F5200F89F50 /* HTTPConnection.h */,
 				0750091614217F5200F89F50 /* HTTPConnection.m */,
+				0750093314219D8800F89F50 /* Rack.h */,
+				0750093414219D8800F89F50 /* Rack.m */,
 				0750091814217F5A00F89F50 /* CusackApp.h */,
 				0750091914217F5A00F89F50 /* CusackApp.m */,
 				0750091A14217F5A00F89F50 /* SampleCusackApp.h */,
@@ -189,6 +198,7 @@
 				0750092414217F5A00F89F50 /* Route.m in Sources */,
 				0750092514217F5A00F89F50 /* Request.m in Sources */,
 				0750092614217F5A00F89F50 /* ResponseManager.m in Sources */,
+				0750093514219D8800F89F50 /* Rack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

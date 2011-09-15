@@ -42,9 +42,34 @@
 - (void)setupRoutes {
 }
 
+- (Route *)routeForPath:(NSURL *)path {
+    NSString *relativePath = [path relativePath];
+    
+    for (NSString *key in self.routes) {
+        NSError *error = NULL;
+        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:key
+                                                                               options:NSRegularExpressionCaseInsensitive
+                                                                                 error:&error];
+        
+        if (error) {
+            NSLog(@"Error: %@", [error localizedDescription]);
+            
+            return nil;
+        }
+        
+        if ([regex numberOfMatchesInString:relativePath
+                                   options:0
+                                     range:NSMakeRange(0, [relativePath length])]) {
+            return [self.routes objectForKey:key];
+        }
+    }
+    
+    return nil;
+}
+
 - (void)processURL:(NSURL *)path connection:(HTTPConnection *)connection {
-	Route *route = [self.routes objectForKey:[path relativePath]];
-	
+	Route *route = [self routeForPath:path];
+    
 	if (route) {
 		void (^methodToCall)() = route.block;
 		methodToCall(route.request);	
@@ -57,30 +82,8 @@
 	NSLog(@"Stop Processing!");
 }
 
-
-- (void)get:(NSString *)path withBlock:(void (^)(Request *request))block {
-	Route *route = [[Route alloc] init];
-	route.httpMethod = @"get";
-	route.path = path;
-	route.block = block;
-	route.request = [[[Request alloc] init] autorelease];
-
-	[self.routes setObject:route forKey:path];
-	
-//	path = [path stringByReplacingOccurrencesOfRegex:@"(:(\\w+)|\\*)" usingBlock:
-//			^NSString *(NSInteger captureCount, NSString *const capturedStrings[captureCount], const NSRange capturedRanges[captureCount], volatile BOOL *const stop) {
-//				if ([capturedStrings[1] isEqualToString:@"*"]) {
-//					[keys addObject:@"wildcards"];
-//					return @"(.*?)";
-//				}
-//				
-//				[keys addObject:capturedStrings[2]];
-//				return @"([^/]+)";
-//			}];
-//	
-//	path = [NSString stringWithFormat:@"^%@$", path];	
-	
-	NSError *error = NULL;
+- (NSString *)regexpForPath:(NSString *)path {
+    NSError *error = NULL;
 	NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"(.*/):.*"
 																		   options:NSRegularExpressionCaseInsensitive
 																			 error:&error];
@@ -88,7 +91,7 @@
 	if (error) {
 		NSLog(@"Error: %@", [error localizedDescription]);
 		
-		return;
+		return nil;
 	}
 	
 	NSString *regexpPath = [regex stringByReplacingMatchesInString:path
@@ -97,6 +100,18 @@
 													  withTemplate:@"$1.*"];
 	
 	NSLog(@"reg'd: %@", regexpPath);
+
+    return regexpPath;
+}
+
+- (void)get:(NSString *)path withBlock:(void (^)(Request *request))block {
+	Route *route = [[Route alloc] init];
+	route.httpMethod = @"get";
+	route.path = path;
+	route.block = block;
+	route.request = [[[Request alloc] init] autorelease];
+
+	[self.routes setObject:route forKey:[self regexpForPath:path]];	
 }
 
 @end

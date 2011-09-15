@@ -3,7 +3,6 @@
 //  Cusack
 //
 //  Created by Arik Devens on 9/11/11.
-//  Copyright 2011 Posterous, Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -31,5 +30,8 @@
 - (void)get:(NSString *)path withBlock:(void (^)(Request *request))block;
 
 - (void)setupRoutes;
+
+// Internal methods
+- (NSString *)regexpForPath:(NSString *)path;
 
 @end
