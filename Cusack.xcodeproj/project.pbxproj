@@ -279,6 +279,7 @@
 				0750090E14217E9A00F89F50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
