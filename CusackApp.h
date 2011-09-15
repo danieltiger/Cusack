@@ -1,5 +1,5 @@
 //
-//  App.h
+//  CusackApp.h
 //  Cusack
 //
 //  Created by Arik Devens on 9/11/11.
@@ -11,14 +11,25 @@
 
 
 @class HTTPConnection;
+@class Request;
 
-@interface App : NSObject <HTTPServerDelegate> {
-	HTTPServer *server;
+@interface CusackApp : NSObject <HTTPServerDelegate> {
+	HTTPServer *server;	
+	NSMutableDictionary *routes;
+	
+	int code;
+	NSDictionary *headers;
+	NSString *body;
 }
 
 @property (nonatomic, retain) HTTPServer *server;
+@property (nonatomic, retain) NSMutableDictionary *routes;
 
 - (void)processURL:(NSURL *)path connection:(HTTPConnection *)connection;
 - (void)stopProcessing;
+
+- (void)get:(NSString *)path withBlock:(void (^)(Request *request))block;
+
+- (void)setupRoutes;
 
 @end
