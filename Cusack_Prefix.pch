@@ -1,7 +1,0 @@
-//
-// Prefix header for all source files of the 'Cusack' target in the 'Cusack' project.
-//
-
-#ifdef __OBJC__
-    #import <Foundation/Foundation.h>
-#endif

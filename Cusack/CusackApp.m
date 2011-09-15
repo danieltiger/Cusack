@@ -64,7 +64,7 @@
 	route.path = path;
 	route.block = block;
 	route.request = [[[Request alloc] init] autorelease];
-	
+
 	[self.routes setObject:route forKey:path];
 	
 //	path = [path stringByReplacingOccurrencesOfRegex:@"(:(\\w+)|\\*)" usingBlock:
@@ -81,7 +81,7 @@
 //	path = [NSString stringWithFormat:@"^%@$", path];	
 	
 	NSError *error = NULL;
-	NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@".*\/:(.*)"
+	NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"(.*/):.*"
 																		   options:NSRegularExpressionCaseInsensitive
 																			 error:&error];
 	
@@ -94,7 +94,7 @@
 	NSString *regexpPath = [regex stringByReplacingMatchesInString:path
 														   options:0
 															 range:NSMakeRange(0, [path length])
-													  withTemplate:@".*"];
+													  withTemplate:@"$1.*"];
 	
 	NSLog(@"reg'd: %@", regexpPath);
 }

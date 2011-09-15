@@ -3,276 +3,284 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		07153172141CA4E600B0EB60 /* CusackApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 07153171141CA4E600B0EB60 /* CusackApp.m */; };
-		073554F4141C0B2700649E7B /* HTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 073554F3141C0B2700649E7B /* HTTPServer.m */; };
-		0748012014202CE600C7752A /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = 0748011F14202CE600C7752A /* Route.m */; };
-		0748028E14214F4600C7752A /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 0748028D14214F4600C7752A /* Request.m */; };
-		074802AC14216C0200C7752A /* ResponseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 074802AB14216C0200C7752A /* ResponseManager.m */; };
-		074802D91421701A00C7752A /* SampleCusackApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 074802D81421701A00C7752A /* SampleCusackApp.m */; };
-		07B7C25C141C13D700C09D64 /* HTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B7C25B141C13D700C09D64 /* HTTPConnection.m */; };
-		07B7C4D0141C2A1600C09D64 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B7C4CF141C2A1600C09D64 /* Cocoa.framework */; };
-		07B7C4D4141C2A1C00C09D64 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B7C4D3141C2A1C00C09D64 /* CoreData.framework */; };
-		8DD76F9A0486AA7600D96B5E /* Cusack.m in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* Cusack.m */; settings = {ATTRIBUTES = (); }; };
-		8DD76F9C0486AA7600D96B5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FB779EFE84155DC02AAC07 /* Foundation.framework */; };
-		8DD76F9F0486AA7600D96B5E /* Cusack.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6859EA3029092ED04C91782 /* Cusack.1 */; };
+		0750090214217E9A00F89F50 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0750090114217E9A00F89F50 /* Foundation.framework */; };
+		0750090514217E9A00F89F50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0750090414217E9A00F89F50 /* main.m */; };
+		0750090914217E9A00F89F50 /* Cusack.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0750090814217E9A00F89F50 /* Cusack.1 */; };
+		0750091114217F3500F89F50 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0750090F14217F2200F89F50 /* CoreData.framework */; };
+		0750091414217F4800F89F50 /* HTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0750091314217F4800F89F50 /* HTTPServer.m */; };
+		0750091714217F5200F89F50 /* HTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0750091614217F5200F89F50 /* HTTPConnection.m */; };
+		0750092214217F5A00F89F50 /* CusackApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 0750091914217F5A00F89F50 /* CusackApp.m */; };
+		0750092314217F5A00F89F50 /* SampleCusackApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 0750091B14217F5A00F89F50 /* SampleCusackApp.m */; };
+		0750092414217F5A00F89F50 /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = 0750091D14217F5A00F89F50 /* Route.m */; };
+		0750092514217F5A00F89F50 /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 0750091F14217F5A00F89F50 /* Request.m */; };
+		0750092614217F5A00F89F50 /* ResponseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0750092114217F5A00F89F50 /* ResponseManager.m */; };
+		075009291421804900F89F50 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075009271421804400F89F50 /* CoreServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		8DD76F9E0486AA7600D96B5E /* CopyFiles */ = {
+		075008FB14217E9A00F89F50 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
-				8DD76F9F0486AA7600D96B5E /* Cusack.1 in CopyFiles */,
+				0750090914217E9A00F89F50 /* Cusack.1 in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		07153170141CA4E600B0EB60 /* CusackApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CusackApp.h; sourceTree = "<group>"; };
-		07153171141CA4E600B0EB60 /* CusackApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CusackApp.m; sourceTree = "<group>"; };
-		073554F2141C0B2700649E7B /* HTTPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPServer.h; sourceTree = "<group>"; };
-		073554F3141C0B2700649E7B /* HTTPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPServer.m; sourceTree = "<group>"; };
-		0748011E14202CE600C7752A /* Route.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Route.h; sourceTree = "<group>"; };
-		0748011F14202CE600C7752A /* Route.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Route.m; sourceTree = "<group>"; };
-		0748028C14214F4600C7752A /* Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Request.h; sourceTree = "<group>"; };
-		0748028D14214F4600C7752A /* Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Request.m; sourceTree = "<group>"; };
-		074802AA14216C0200C7752A /* ResponseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseManager.h; sourceTree = "<group>"; };
-		074802AB14216C0200C7752A /* ResponseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseManager.m; sourceTree = "<group>"; };
-		074802D71421701A00C7752A /* SampleCusackApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleCusackApp.h; sourceTree = "<group>"; };
-		074802D81421701A00C7752A /* SampleCusackApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleCusackApp.m; sourceTree = "<group>"; };
-		07B7C25A141C13D700C09D64 /* HTTPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPConnection.h; sourceTree = "<group>"; };
-		07B7C25B141C13D700C09D64 /* HTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPConnection.m; sourceTree = "<group>"; };
-		07B7C4CF141C2A1600C09D64 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		07B7C4D3141C2A1C00C09D64 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		08FB7796FE84155DC02AAC07 /* Cusack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cusack.m; sourceTree = "<group>"; };
-		08FB779EFE84155DC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		32A70AAB03705E1F00C91783 /* Cusack_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cusack_Prefix.pch; sourceTree = "<group>"; };
-		8DD76FA10486AA7600D96B5E /* Cusack */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Cusack; sourceTree = BUILT_PRODUCTS_DIR; };
-		C6859EA3029092ED04C91782 /* Cusack.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Cusack.1; sourceTree = "<group>"; };
+		075008FD14217E9A00F89F50 /* Cusack */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Cusack; sourceTree = BUILT_PRODUCTS_DIR; };
+		0750090114217E9A00F89F50 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0750090414217E9A00F89F50 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0750090714217E9A00F89F50 /* Cusack-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cusack-Prefix.pch"; sourceTree = "<group>"; };
+		0750090814217E9A00F89F50 /* Cusack.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Cusack.1; sourceTree = "<group>"; };
+		0750090F14217F2200F89F50 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		0750091214217F4800F89F50 /* HTTPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPServer.h; sourceTree = "<group>"; };
+		0750091314217F4800F89F50 /* HTTPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPServer.m; sourceTree = "<group>"; };
+		0750091514217F5200F89F50 /* HTTPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPConnection.h; sourceTree = "<group>"; };
+		0750091614217F5200F89F50 /* HTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPConnection.m; sourceTree = "<group>"; };
+		0750091814217F5A00F89F50 /* CusackApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CusackApp.h; sourceTree = "<group>"; };
+		0750091914217F5A00F89F50 /* CusackApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CusackApp.m; sourceTree = "<group>"; };
+		0750091A14217F5A00F89F50 /* SampleCusackApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleCusackApp.h; sourceTree = "<group>"; };
+		0750091B14217F5A00F89F50 /* SampleCusackApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleCusackApp.m; sourceTree = "<group>"; };
+		0750091C14217F5A00F89F50 /* Route.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Route.h; sourceTree = "<group>"; };
+		0750091D14217F5A00F89F50 /* Route.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Route.m; sourceTree = "<group>"; };
+		0750091E14217F5A00F89F50 /* Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Request.h; sourceTree = "<group>"; };
+		0750091F14217F5A00F89F50 /* Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Request.m; sourceTree = "<group>"; };
+		0750092014217F5A00F89F50 /* ResponseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseManager.h; sourceTree = "<group>"; };
+		0750092114217F5A00F89F50 /* ResponseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseManager.m; sourceTree = "<group>"; };
+		075009271421804400F89F50 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8DD76F9B0486AA7600D96B5E /* Frameworks */ = {
+		075008FA14217E9A00F89F50 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DD76F9C0486AA7600D96B5E /* Foundation.framework in Frameworks */,
-				07B7C4D0141C2A1600C09D64 /* Cocoa.framework in Frameworks */,
-				07B7C4D4141C2A1C00C09D64 /* CoreData.framework in Frameworks */,
+				0750091114217F3500F89F50 /* CoreData.framework in Frameworks */,
+				0750090214217E9A00F89F50 /* Foundation.framework in Frameworks */,
+				075009291421804900F89F50 /* CoreServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		08FB7794FE84155DC02AAC07 /* Cusack */ = {
+		075008F214217E9A00F89F50 = {
 			isa = PBXGroup;
 			children = (
-				08FB7795FE84155DC02AAC07 /* Source */,
-				C6859EA2029092E104C91782 /* Documentation */,
-				08FB779DFE84155DC02AAC07 /* External Frameworks and Libraries */,
-				1AB674ADFE9D54B511CA2CBB /* Products */,
+				0750090314217E9A00F89F50 /* Cusack */,
+				0750090014217E9A00F89F50 /* Frameworks */,
+				075008FE14217E9A00F89F50 /* Products */,
 			);
-			name = Cusack;
 			sourceTree = "<group>";
 		};
-		08FB7795FE84155DC02AAC07 /* Source */ = {
+		075008FE14217E9A00F89F50 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				073554F2141C0B2700649E7B /* HTTPServer.h */,
-				073554F3141C0B2700649E7B /* HTTPServer.m */,
-				07B7C25A141C13D700C09D64 /* HTTPConnection.h */,
-				07B7C25B141C13D700C09D64 /* HTTPConnection.m */,
-				07153170141CA4E600B0EB60 /* CusackApp.h */,
-				07153171141CA4E600B0EB60 /* CusackApp.m */,
-				074802D71421701A00C7752A /* SampleCusackApp.h */,
-				074802D81421701A00C7752A /* SampleCusackApp.m */,
-				0748011E14202CE600C7752A /* Route.h */,
-				0748011F14202CE600C7752A /* Route.m */,
-				0748028C14214F4600C7752A /* Request.h */,
-				0748028D14214F4600C7752A /* Request.m */,
-				074802AA14216C0200C7752A /* ResponseManager.h */,
-				074802AB14216C0200C7752A /* ResponseManager.m */,
-				32A70AAB03705E1F00C91783 /* Cusack_Prefix.pch */,
-				08FB7796FE84155DC02AAC07 /* Cusack.m */,
-			);
-			name = Source;
-			sourceTree = "<group>";
-		};
-		08FB779DFE84155DC02AAC07 /* External Frameworks and Libraries */ = {
-			isa = PBXGroup;
-			children = (
-				08FB779EFE84155DC02AAC07 /* Foundation.framework */,
-				07B7C4CF141C2A1600C09D64 /* Cocoa.framework */,
-				07B7C4D3141C2A1C00C09D64 /* CoreData.framework */,
-			);
-			name = "External Frameworks and Libraries";
-			sourceTree = "<group>";
-		};
-		1AB674ADFE9D54B511CA2CBB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				8DD76FA10486AA7600D96B5E /* Cusack */,
+				075008FD14217E9A00F89F50 /* Cusack */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C6859EA2029092E104C91782 /* Documentation */ = {
+		0750090014217E9A00F89F50 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C6859EA3029092ED04C91782 /* Cusack.1 */,
+				075009271421804400F89F50 /* CoreServices.framework */,
+				0750090F14217F2200F89F50 /* CoreData.framework */,
+				0750090114217E9A00F89F50 /* Foundation.framework */,
 			);
-			name = Documentation;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0750090314217E9A00F89F50 /* Cusack */ = {
+			isa = PBXGroup;
+			children = (
+				0750091214217F4800F89F50 /* HTTPServer.h */,
+				0750091314217F4800F89F50 /* HTTPServer.m */,
+				0750091514217F5200F89F50 /* HTTPConnection.h */,
+				0750091614217F5200F89F50 /* HTTPConnection.m */,
+				0750091814217F5A00F89F50 /* CusackApp.h */,
+				0750091914217F5A00F89F50 /* CusackApp.m */,
+				0750091A14217F5A00F89F50 /* SampleCusackApp.h */,
+				0750091B14217F5A00F89F50 /* SampleCusackApp.m */,
+				0750091C14217F5A00F89F50 /* Route.h */,
+				0750091D14217F5A00F89F50 /* Route.m */,
+				0750091E14217F5A00F89F50 /* Request.h */,
+				0750091F14217F5A00F89F50 /* Request.m */,
+				0750092014217F5A00F89F50 /* ResponseManager.h */,
+				0750092114217F5A00F89F50 /* ResponseManager.m */,
+				0750090414217E9A00F89F50 /* main.m */,
+				0750090814217E9A00F89F50 /* Cusack.1 */,
+				0750090614217E9A00F89F50 /* Supporting Files */,
+			);
+			path = Cusack;
+			sourceTree = "<group>";
+		};
+		0750090614217E9A00F89F50 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0750090714217E9A00F89F50 /* Cusack-Prefix.pch */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8DD76F960486AA7600D96B5E /* Cusack */ = {
+		075008FC14217E9A00F89F50 /* Cusack */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1DEB927408733DD40010E9CD /* Build configuration list for PBXNativeTarget "Cusack" */;
+			buildConfigurationList = 0750090C14217E9A00F89F50 /* Build configuration list for PBXNativeTarget "Cusack" */;
 			buildPhases = (
-				8DD76F990486AA7600D96B5E /* Sources */,
-				8DD76F9B0486AA7600D96B5E /* Frameworks */,
-				8DD76F9E0486AA7600D96B5E /* CopyFiles */,
+				075008F914217E9A00F89F50 /* Sources */,
+				075008FA14217E9A00F89F50 /* Frameworks */,
+				075008FB14217E9A00F89F50 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Cusack;
-			productInstallPath = "$(HOME)/bin";
 			productName = Cusack;
-			productReference = 8DD76FA10486AA7600D96B5E /* Cusack */;
+			productReference = 075008FD14217E9A00F89F50 /* Cusack */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		08FB7793FE84155DC02AAC07 /* Project object */ = {
+		075008F414217E9A00F89F50 /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = 1DEB927808733DD40010E9CD /* Build configuration list for PBXProject "Cusack" */;
-			compatibilityVersion = "Xcode 3.1";
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 075008F714217E9A00F89F50 /* Build configuration list for PBXProject "Cusack" */;
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
-			hasScannedForEncodings = 1;
+			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
-				Japanese,
-				French,
-				German,
+				en,
 			);
-			mainGroup = 08FB7794FE84155DC02AAC07 /* Cusack */;
+			mainGroup = 075008F214217E9A00F89F50;
+			productRefGroup = 075008FE14217E9A00F89F50 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8DD76F960486AA7600D96B5E /* Cusack */,
+				075008FC14217E9A00F89F50 /* Cusack */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8DD76F990486AA7600D96B5E /* Sources */ = {
+		075008F914217E9A00F89F50 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DD76F9A0486AA7600D96B5E /* Cusack.m in Sources */,
-				073554F4141C0B2700649E7B /* HTTPServer.m in Sources */,
-				07B7C25C141C13D700C09D64 /* HTTPConnection.m in Sources */,
-				07153172141CA4E600B0EB60 /* CusackApp.m in Sources */,
-				0748012014202CE600C7752A /* Route.m in Sources */,
-				0748028E14214F4600C7752A /* Request.m in Sources */,
-				074802AC14216C0200C7752A /* ResponseManager.m in Sources */,
-				074802D91421701A00C7752A /* SampleCusackApp.m in Sources */,
+				0750090514217E9A00F89F50 /* main.m in Sources */,
+				0750091414217F4800F89F50 /* HTTPServer.m in Sources */,
+				0750091714217F5200F89F50 /* HTTPConnection.m in Sources */,
+				0750092214217F5A00F89F50 /* CusackApp.m in Sources */,
+				0750092314217F5A00F89F50 /* SampleCusackApp.m in Sources */,
+				0750092414217F5A00F89F50 /* Route.m in Sources */,
+				0750092514217F5A00F89F50 /* Request.m in Sources */,
+				0750092614217F5A00F89F50 /* ResponseManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		1DEB927508733DD40010E9CD /* Debug */ = {
+		0750090A14217E9A00F89F50 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = NO;
 				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Cusack_Prefix.pch;
-				INSTALL_PATH = /usr/local/bin;
-				PRODUCT_NAME = Cusack;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
-		1DEB927608733DD40010E9CD /* Release */ = {
+		0750090B14217E9A00F89F50 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Cusack_Prefix.pch;
-				INSTALL_PATH = /usr/local/bin;
-				PRODUCT_NAME = Cusack;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
-		1DEB927908733DD40010E9CD /* Debug */ = {
+		0750090D14217E9A00F89F50 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PREBINDING = NO;
-				SDKROOT = macosx10.6;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Cusack/Cusack-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		1DEB927A08733DD40010E9CD /* Release */ = {
+		0750090E14217E9A00F89F50 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				PREBINDING = NO;
-				SDKROOT = macosx10.6;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Cusack/Cusack-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1DEB927408733DD40010E9CD /* Build configuration list for PBXNativeTarget "Cusack" */ = {
+		075008F714217E9A00F89F50 /* Build configuration list for PBXProject "Cusack" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1DEB927508733DD40010E9CD /* Debug */,
-				1DEB927608733DD40010E9CD /* Release */,
+				0750090A14217E9A00F89F50 /* Debug */,
+				0750090B14217E9A00F89F50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1DEB927808733DD40010E9CD /* Build configuration list for PBXProject "Cusack" */ = {
+		0750090C14217E9A00F89F50 /* Build configuration list for PBXNativeTarget "Cusack" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1DEB927908733DD40010E9CD /* Debug */,
-				1DEB927A08733DD40010E9CD /* Release */,
+				0750090D14217E9A00F89F50 /* Debug */,
+				0750090E14217E9A00F89F50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+	rootObject = 075008F414217E9A00F89F50 /* Project object */;
 }

@@ -13,7 +13,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8DD76F960486AA7600D96B5E"
+               BlueprintIdentifier = "075008FC14217E9A00F89F50"
                BuildableName = "Cusack"
                BlueprintName = "Cusack"
                ReferencedContainer = "container:Cusack.xcodeproj">
@@ -31,7 +31,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8DD76F960486AA7600D96B5E"
+            BlueprintIdentifier = "075008FC14217E9A00F89F50"
             BuildableName = "Cusack"
             BlueprintName = "Cusack"
             ReferencedContainer = "container:Cusack.xcodeproj">
@@ -49,7 +49,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8DD76F960486AA7600D96B5E"
+            BlueprintIdentifier = "075008FC14217E9A00F89F50"
             BuildableName = "Cusack"
             BlueprintName = "Cusack"
             ReferencedContainer = "container:Cusack.xcodeproj">
@@ -67,7 +67,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8DD76F960486AA7600D96B5E"
+            BlueprintIdentifier = "075008FC14217E9A00F89F50"
             BuildableName = "Cusack"
             BlueprintName = "Cusack"
             ReferencedContainer = "container:Cusack.xcodeproj">
